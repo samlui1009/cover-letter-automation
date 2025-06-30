@@ -1,9 +1,6 @@
 from docxtpl import DocxTemplate
 # Import added and installed to use Python-Docx-Template
 # Refer to documentation here: https://docxtpl.readthedocs.io/en/latest/
-from docx2pdf import convert
-# Added this import to potentially do conversion from Docx to PDF => Pending
-# Refer to documentation here: https://pypi.org/project/docx2pdf/
 from datetime import datetime as dt
 # Imports needed to set up the date
 
@@ -27,7 +24,7 @@ if (letter_addressee == "NA"):
 mission_statement = input("What is their mission statement?")
 # Inputs for all the address-related information for the company
 
-job_type = input("Enter the job type (SWE, Data Analyst, Data Science, Bioinformatics, QA: ")
+job_type = input("Enter the job type (SWE, Data Analyst, Data Science, Bioinformatics, QA): ")
 # Inputs for job type to determine what cover letter format to use
 
 
@@ -48,31 +45,38 @@ if (job_type == "SWE"):
     doc = DocxTemplate("SWE_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    doc.save(letter_name + "_CoverLetterTemplate.docx")
+    doc.save("SL_" + letter_name + "_CoverLetter.docx")
+
 elif (job_type == "Data Analyst"):
     doc = DocxTemplate("DataAnalyst_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    doc.save(letter_name + "_CoverLetterTemplate.docx")
+    doc.save("SL_" + letter_name + "_CoverLetter.docx")
+
 elif (job_type == "QA"):
     doc = DocxTemplate("QA_Testing_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    doc.save(letter_name + "_CoverLetterTemplate.docx")
+    doc.save("SL_" + letter_name + "_CoverLetter.docx")
+
 elif (job_type == "Data Science"):
     doc = DocxTemplate("DataScience_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    doc.save(letter_name + "_CoverLetterTemplate.docx")
+    doc.save("SL_" + letter_name + "_CoverLetter.docx")
+
 elif (job_type == "IT Analyst"):
     doc = DocxTemplate("IT_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    doc.save(letter_name + "_CoverLetterTemplate.docx")
+    doc.save("SL_" + letter_name + "_CoverLetter.docx")
+
 elif (job_type == "Bioinformatics"):
     doc = DocxTemplate("Bioinformatics_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    doc.save(letter_name + "_CoverLetter.docx")
+    doc.save("SL_" + letter_name + "_CoverLetter.docx")
 # Set up the conditional statements needed to ensure that the correct template is being used
 
+# https://medium.com/@alice.yang_10652/convert-word-doc-or-docx-to-pdf-with-python-a-comprehensive-guide-6c8e8b5a079a
+# ^Alice Yang's reference on how to set up PDF converter
