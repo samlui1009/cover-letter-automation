@@ -5,9 +5,14 @@ from docxtpl import DocxTemplate
 # Refer to documentation here: https://docxtpl.readthedocs.io/en/latest/
 from datetime import datetime as dt
 # Imports needed to set up the date
+from dotenv import load_dotenv
+# Load the .env file to access environment variables
 
 t = dt.now()
 # Variable to set up the date
+
+# Load the environment variables
+load_dotenv()
 
 todays_date = (t.strftime("%B" " " "%d" ", " "%Y"))
 company_name = input("Enter the name of the company: ")
@@ -43,7 +48,7 @@ context = {
     'mission_statement': mission_statement
 }
 
-output_folder = r"C:\Users\Sam's PC\Downloads\Cover Letters To Convert"
+output_folder = os.getenv("OUTPUT_FOLDER_PATH")
 
 if (job_type == "SWE"):
     doc = DocxTemplate("SWE_CoverLetterTemplate.docx")
