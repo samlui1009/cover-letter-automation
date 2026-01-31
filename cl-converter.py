@@ -49,46 +49,44 @@ context = {
 }
 
 output_folder = os.getenv("OUTPUT_FOLDER_PATH")
+writer_initials = os.getenv("WRITER_INITIALS")
 
 if (job_type == "SWE"):
     doc = DocxTemplate("SWE_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    output_path = os.path.join(output_folder, f"SL_{letter_name}_CoverLetter.docx")
+    output_path = os.path.join(output_folder, f"{writer_initials}_{letter_name}_CoverLetter.docx")
     doc.save(output_path)
 
 elif (job_type == "Data Analyst"):
     doc = DocxTemplate("DataAnalyst_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    output_path = os.path.join(output_folder, f"SL_{letter_name}_CoverLetter.docx")
+    output_path = os.path.join(output_folder, f"{writer_initials}_{letter_name}_CoverLetter.docx")
     doc.save(output_path)
 elif (job_type == "QA"):
     doc = DocxTemplate("QA_Testing_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    output_path = os.path.join(output_folder, f"SL_{letter_name}_CoverLetter.docx")
+    output_path = os.path.join(output_folder, f"{writer_initials}_{letter_name}_CoverLetter.docx")
     doc.save(output_path)
 elif (job_type == "Data Science"):
     doc = DocxTemplate("DataScience_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    output_path = os.path.join(output_folder, f"SL_{letter_name}_CoverLetter.docx")
+    output_path = os.path.join(output_folder, f"{writer_initials}_{letter_name}_CoverLetter.docx")
     doc.save(output_path)
 elif (job_type == "IT Analyst"):
     doc = DocxTemplate("IT_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    output_path = os.path.join(output_folder, f"SL_{letter_name}_CoverLetter.docx")
+    output_path = os.path.join(output_folder, f"{writer_initials}_{letter_name}_CoverLetter.docx")
     doc.save(output_path)
 elif (job_type == "Bioinformatics"):
     doc = DocxTemplate("Bioinformatics_CoverLetterTemplate.docx")
     doc.render(context)
     letter_name = input("What would you like to name this letter?")
-    output_path = os.path.join(output_folder, f"SL_{letter_name}_CoverLetter.docx")
+    output_path = os.path.join(output_folder, f"{writer_initials}_{letter_name}_CoverLetter.docx")
     doc.save(output_path)
 
 # Set up the conditional statements needed to ensure that the correct template is being used
-
-# https://medium.com/@alice.yang_10652/convert-word-doc-or-docx-to-pdf-with-python-a-comprehensive-guide-6c8e8b5a079a
-# ^Alice Yang's reference on how to set up PDF converter
