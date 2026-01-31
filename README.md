@@ -3,12 +3,13 @@
 
 ## Usage
 To run this script:
-1.  Open the command-line window, and type the following\
+1. Open the command-line window, and type the following\
 `python cl-converter.py`
 2. Install all required dependencies, which can be found in the requirements.txt file. 
-3. Set up your .env file at the root directory, creating 2 environment variables. The first should be for your target output folder path (Named <b>OUTPUT_FOLDER_PATH</b>), and your initials (Named <b>WRITER_INITIALS</b>). 
-4.  When prompted by the interface, enter all pertinent information regarding the job that you wish to write the cover letter for.
-5.  Upon completion, a new Word Docx file that is now populated with all prior inputs should be accessible in your set output folder path.
+3. Set up your .env file at the root directory, creating 2 environment variables. The first should be for your target output folder path (Named <b>OUTPUT_FOLDER_PATH</b>), and your initials (Named <b>WRITER_INITIALS</b>).
+4. Create your cover letter templates, and save them as .docx. You can change out the variable names as you'd like in the source code, so long as it matches the name of your actual Word Documents. In my case, I label my templates accordingly in the following way: SWE_CoverLetterTemplate.docx. 
+5. When prompted by the interface, enter all pertinent information regarding the job that you wish to write the cover letter for.
+6. Upon completion, a new Word Docx file that is now populated with all prior inputs should be accessible in your set output folder path.
 
 ## Library Dependencies
 <p>For this project, I made use of some well-known Python libraries/modules.</li>
